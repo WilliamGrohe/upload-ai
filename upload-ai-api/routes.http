@@ -17,9 +17,21 @@ Content-Type: audio/mpeg
 ###
 
 # @name create-transcription
-POST http://localhost:3333/videos/de6948c2-b7a0-4c3d-a068-5d6d4fc2656c/transcription
+POST http://localhost:3333/videos/79c31967-568a-4307-b432-6a9e9fb40d40/transcription
 Content-Type: application/json
 
 {
   "prompt": "NX Zero, MVB"
+}
+
+###
+
+# @name generate-ai-completion
+POST http://localhost:3333/ai/complete
+Content-Type: application/json
+
+{
+  "videoID": "79c31967-568a-4307-b432-6a9e9fb40d40",
+  "temperature": 0.5,
+  "template": "Gere um resumo da transcrição do video informada a seguir: '''{transcription}''' "
 }
